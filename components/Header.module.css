@@ -1,0 +1,94 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* アニメーション用の transition を追加 */
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* ヘッダーの表示/非表示クラス */
+.headerVisible {
+  transform: translateY(0);
+  opacity: 1;
+}
+.headerHidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  margin-left: -40px; 
+  margin-top: -2px;
+}
+
+/* ↓ 文字ロゴを大きくするためのスタイルを追加 */
+.logoText {
+  height: 50px; /* 高さを少し大きく */
+  width: auto;  /* 幅は自動調整してアスペクト比を維持 */
+  margin-left: -120px;
+  margin-top: 3px;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 70px;
+}
+
+.navList a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  padding-bottom: 5px;
+  position: relative;
+  transition: color 0.3s;
+  white-space: nowrap;
+  margin-right: -60px;
+}
+
+.navList a span {
+  font-size: 0.8em; /* 親要素より少し小さく */
+  color: #999; /* 少し薄いグレーに */
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.navList a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transform: none; /* 中央揃えのtransformを削除 */
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease-in-out;
+}
+
+.navList a:hover {
+  color: #000;
+}
+
+.navList a:hover::after {
+  width: 100%;
+}

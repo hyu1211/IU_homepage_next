@@ -1,0 +1,55 @@
+.contactWrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--background-white);
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .intro {
+    line-height: 1.8;
+    margin-bottom: 50px;
+  }
+  
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* 各項目の間隔を広げる */
+    text-align: left; /* テキストを左揃えに */
+  }
+  
+  .infoItem {
+    display: flex;
+    align-items: center; /* アイコンとテキストを中央揃えに */
+    gap: 20px;
+  }
+  
+  .contactIcon {
+    font-size: 2.5rem; /* アイコンサイズ */
+    color: var(--primary-color);
+  }
+  
+  .infoText {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .infoText strong {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+  
+  .infoText a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: color 0.3s;
+  }
+  
+  .infoText a:hover {
+    color: var(--secondary-color);
+  }

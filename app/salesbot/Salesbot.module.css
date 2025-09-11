@@ -1,0 +1,52 @@
+.description {
+    text-align: center;
+    max-width: 700px;
+    margin: -30px auto 50px;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+  }
+  
+  .featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--background-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .featureIcon {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    flex-shrink: 0; /* アイコンが縮まないようにする */
+  }
+  
+  .ctaContainer {
+    text-align: center;
+  }
+  
+  .ctaButton {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(10, 25, 47, 0.2);
+  }

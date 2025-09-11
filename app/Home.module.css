@@ -1,0 +1,300 @@
+/* --- ヒーローセクション --- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - var(--header-height));
+  min-height: 600px;
+  text-align: center;
+  color: var(--background-white);
+  background-image: url('https://res.cloudinary.com/dagugihav/image/upload/v1757525141/building-6528075_1280_lufgnv.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.6));
+}
+.heroContent {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInDown 1s ease-out forwards;
+  animation-delay: var(--animation-delay);
+}
+.heroTitle {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  color: var(--background-white);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.heroSubtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  color: #ccd6f6;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+.ctaButton {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 15px 35px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.ctaButton:hover {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+
+/* --- 会社概要セクション --- */
+.aboutSection {
+  position: relative;
+  color: var(--text-light);
+  padding-top: 120px !important;
+  padding-bottom: 120px !important;
+  background-image: url('https://res.cloudinary.com/dagugihav/image/upload/v1757525196/building-9761776_1280_dtm1kl.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+}
+.aboutSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 25, 47, 0.9);
+  z-index: -1;
+}
+.aboutSection :global(.section-title) {
+  color: var(--background-white);
+}
+.aboutSection :global(.section-title)::after {
+  background-color: var(--secondary-color); /* 下線はアクセントカラーのまま */
+}
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 2;
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+.aboutIcon {
+  font-size: 3.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+.simpleButton {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  color: var(--secondary-color);
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.simpleButton:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* --- 提供価値セクション --- */
+.solutionSection {
+  background-color: var(--background-white);
+}
+.solutionGrid {
+  display: grid;
+  /* 常に2列で表示するように修正（スマホでは1列） */
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+/* 画面幅が768px以上の場合に2列にする */
+@media (min-width: 768px) {
+  .solutionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.solutionCard {
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #f5f8ff; /* カードに薄い背景色 */
+  border: 1px solid #eaf0ff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+  /* 光の演出のため */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 光の演出（オーロラエフェクト） */
+.solutionCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--shadow-color) 0%, rgba(255, 255, 255, 0) 40%);
+  transition: transform 0.8s ease;
+  transform: scale(0);
+}
+
+.solutionCard:hover::before {
+  transform: scale(1.5);
+}
+
+.solutionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* アイコンとテキストは光の前面に表示 */
+.solutionIcon, .solutionCard h3, .solutionCard p {
+  position: relative;
+  z-index: 2;
+}
+
+.solutionIcon {
+  font-size: 3rem;
+  color: var(--secondary-color);
+  margin-bottom: 25px;
+}
+
+.solutionCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.solutionCard p {
+  color: var(--text-secondary);
+}
+/* --- 私たちの強みセクション --- */
+.strengthSection {
+  background-color: var(--background-light); /* 背景色を少し暗くして区別 */
+  padding: 100px 0;
+}
+
+.featuresList {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 35px 25px; /* パディングを調整 */
+  border-bottom: 1px solid #e0e6f1;
+  border-radius: 12px; /* 角を丸く */
+  transition: background-color 0.3s ease;
+}
+
+.featureItem:last-child {
+  border-bottom: none;
+}
+
+.featureItem:hover {
+  background-color: var(--background-white); /* ホバー時に白く */
+}
+
+.iconWrapper {
+  font-size: 2.8rem; /* アイコンサイズを微調整 */
+  color: var(--secondary-color);
+  background-color: var(--background-white); /* アイコンの背景 */
+  padding: 15px;
+  border-radius: 50%; /* 円形に */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.textWrapper h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.textWrapper p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+/* --- 実績セクション --- */
+.worksSection {
+  background-color: var(--primary-color);
+}
+.worksSection :global(.section-title) {
+  color: var(--background-white);
+}
+.worksSection :global(.section-title)::after {
+  background-color: var(--secondary-color);
+}
+.worksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.worksCard {
+  background-color: #112240;
+  color: #a8b2d1;
+  padding: 35px;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-top: 4px solid var(--secondary-color);
+}
+.worksCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+.worksIcon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 25px;
+}
+.worksCard h4 {
+  color: var(--background-white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.worksCard p {
+  line-height: 1.8;
+  color: #ccd6f6;
+}
+.worksLink {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  transition: opacity 0.3s;
+  text-decoration: underline;
+}
+.worksLink:hover {
+  opacity: 0.8;
+}
+
+/* --- アニメーション用キーフレーム --- */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
