@@ -3,10 +3,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { IoMenu, IoClose } from "react-icons/io5"; // ハンバーガーメニュー用のアイコンをインポート
 import styles from './Header.module.css';
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // メニューの開閉状態を管理
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -27,6 +29,11 @@ export default function Header() {
     };
   }, []);
 
+  // メニューの開閉を切り替える関数
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={`${styles.header} ${isVisible ? styles.headerVisible : styles.headerHidden}`}>
       <nav className={`${styles.nav} container`}>
@@ -41,20 +48,27 @@ export default function Header() {
           <Image
             src="https://res.cloudinary.com/dagugihav/image/upload/v1757591043/1_h473ft.png"
             alt="Inspire Up Text"
-            className={styles.logoText} /* ← このクラスを追加 */
-            width={140} /* 初期表示用の幅も少し調整 */
-            height={35}  /* 初期表示用の高さも少し調整 */
+            className={styles.logoText}
+            width={140}
+            height={35}
             style={{ marginLeft: '8px' }}
             priority
           />
         </Link>
-        <ul className={styles.navList}>
-          <li><Link href="/">ホーム <span>/ Home</span></Link></li>
-          <li><Link href="/#about">会社概要 <span>/ About</span></Link></li>
-          <li><Link href="/#solution">提供サービス <span>/ Services</span></Link></li>
-          <li><Link href="/#strength">特長・強み <span>/ Features</span></Link></li>
-          <li><Link href="/#works">実績紹介 <span>/ Works</span></Link></li>
-          <li><Link href="/contact">お問い合わせ <span>/ Contact</span></Link></li>
+
+        {/* ハンバーガーメニューボタン */}
+        <div className={styles.menuButton} onClick={toggleMenu}>
+          {isMenuOpen ? <IoClose /> : <IoMenu />}
+        </div>
+
+        {/* ナビゲーションリスト */}
+        <ul className={`${styles.navList} ${isMenuOpen ? styles.menuOpen : ''}`}>
+          <li><Link href="/" onClick={toggleMenu}>ホーム <span>/ Home</span></Link></li>
+          <li><Link href="/#about" onClick={toggleMenu}>会社概要 <span>/ About</span></Link></li>
+          <li><Link href="/#solution" onClick={toggleMenu}>提供サービス <span>/ Services</span></Link></li>
+          <li><Link href="/#strength" onClick={toggleMenu}>特長・強み <span>/ Features</span></Link></li>
+          <li><Link href="/#works" onClick={toggleMenu}>実績紹介 <span>/ Works</span></Link></li>
+          <li><Link href="/contact" onClick={toggleMenu}>お問い合わせ <span>/ Contact</span></Link></li>
         </ul>
       </nav>
     </header>

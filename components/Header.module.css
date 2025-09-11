@@ -10,11 +10,9 @@
   backdrop-filter: blur(10px);
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  /* アニメーション用の transition を追加 */
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
-/* ヘッダーの表示/非表示クラス */
 .headerVisible {
   transform: translateY(0);
   opacity: 1;
@@ -35,24 +33,20 @@
   display: flex;
   align-items: center;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
-  margin-left: -40px; 
-  margin-top: -2px;
+  margin-left: -55px;
 }
-
-/* ↓ 文字ロゴを大きくするためのスタイルを追加 */
 .logoText {
-  height: 50px; /* 高さを少し大きく */
-  width: auto;  /* 幅は自動調整してアスペクト比を維持 */
-  margin-left: -120px;
-  margin-top: 3px;
+  height: 35px;
+  width: auto;
 }
 
+/* --- PC用のナビゲーションスタイル --- */
 .navList {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 70px;
+  gap: 25px;
 }
 
 .navList a {
@@ -63,12 +57,11 @@
   position: relative;
   transition: color 0.3s;
   white-space: nowrap;
-  margin-right: -60px;
 }
 
 .navList a span {
-  font-size: 0.8em; /* 親要素より少し小さく */
-  color: #999; /* 少し薄いグレーに */
+  font-size: 0.8em;
+  color: #999;
   font-weight: 400;
   margin-left: 5px;
 }
@@ -80,7 +73,6 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  transform: none; /* 中央揃えのtransformを削除 */
   background-color: var(--secondary-color);
   transition: width 0.3s ease-in-out;
 }
@@ -91,4 +83,50 @@
 
 .navList a:hover::after {
   width: 100%;
+}
+
+/* --- モバイル用のハンバーガーメニュー --- */
+.menuButton {
+  display: none; /* PCでは非表示 */
+  cursor: pointer;
+  font-size: 2.5rem;
+  z-index: 1100; /* メニューより手前に表示 */
+  color: var(--primary-color);
+}
+
+/* 画面幅が992px以下の場合に適用されるスタイル */
+@media (max-width: 992px) {
+  .logo {
+    margin-left: 0; /* ロゴの左マージンをリセット */
+  }
+  .logoText {
+    height: 30px; /* ロゴテキストを少し小さく */
+  }
+  .menuButton {
+    display: block; /* モバイルで表示 */
+  }
+
+  .navList {
+    display: flex;
+    flex-direction: column; /* 縦並びに変更 */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%; /* 初期状態では画面外に隠す */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: right 0.4s ease-in-out;
+    gap: 40px; /* 項目間のスペースを広げる */
+  }
+
+  .menuOpen {
+    right: 0; /* メニューを開いたときに右からスライドイン */
+  }
+
+  .navList a {
+    font-size: 1.5rem; /* 文字を大きくしてタップしやすく */
+  }
 }
