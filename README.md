@@ -1,25 +1,28 @@
-README.md
-Inspire Up 公式ウェブサイト
-このリポジトリは、Inspire Upの公式ウェブサイトのソースコードです。Next.js (App Router) を使用して構築されています。
+# Inspire Up 公式ウェブサイト
 
-はじめに (Getting Started)
-このプロジェクトをローカル環境でセットアップし、実行する手順は以下の通りです。
+このリポジトリは、Inspire Upの公式ウェブサイトのソースコードです。 [Next.js (App Router)](https://nextjs.org/docs/app) を使用して構築されています。
 
-1. 必要なもの
+---
 
-Node.js (v18.18.0 以上)
+## 🚀 はじめに (Getting Started)
 
-npm, yarn, pnpm, または bun
+このプロジェクトをあなたのローカル環境でセットアップし、実行する手順は以下の通りです。
 
-2. リポジトリのクローン
+### 1. 必要なもの
 
-Bash
+* Node.js (v18.18.0 以上を推奨)
+* npm, yarn, pnpm, または bun のいずれかのパッケージマネージャー
 
-git clone https://github.com/hyu1211/iu_homepage_next.git
+### 2. リポジトリのクローン
+
+まず、このリポジトリをクローンして、プロジェクトディレクトリに移動します。
+
+```bash
+git clone [https://github.com/hyu1211/iu_homepage_next.git](https://github.com/hyu1211/iu_homepage_next.git)
 cd iu_homepage_next
-3. 依存関係のインストール
 
-お使いのパッケージマネージャーに合わせて、以下のいずれかのコマンドを実行してください。
+3. 依存関係のインストール
+次に、プロジェクトに必要なライブラリをインストールします。お使いのパッケージマネージャーに合わせて、以下のいずれかのコマンドを実行してください。
 
 Bash
 
@@ -29,8 +32,7 @@ yarn install
 # または
 pnpm install
 4. 開発サーバーの起動
-
-以下のコマンドを実行すると、開発サーバーが起動します。
+インストールが完了したら、開発サーバーを起動します。
 
 Bash
 
@@ -39,35 +41,45 @@ npm run dev
 yarn dev
 # または
 pnpm dev
-ブラウザで http://localhost:3000 を開くと、ウェブサイトが表示されます。 app ディレクトリ内のファイルを編集すると、ページは自動的に更新されます。
+ブラウザで http://localhost:3000 を開くと、ウェブサイトが表示されます。 app ディレクトリ内のファイルを編集すると、ページはリアルタイムで自動的に更新されます。
 
-技術スタック (Technology Stack)
-フレームワーク: Next.js 15
+✨ 技術スタック (Technology Stack)
+このウェブサイトは、以下のモダンな技術を使用して構築されています。
+
+フレームワーク: Next.js 15 (App Router)
 
 UIライブラリ: React 19
 
 言語: TypeScript
 
-スタイリング: CSS Modules, Tailwind CSS
+スタイリング: CSS Modules
 
 アイコン: React Icons
 
-ディレクトリ構成 (Directory Structure)
+📁 ディレクトリ構成 (Directory Structure)
+プロジェクトの主要なディレクトリとファイルは以下の通りです。
+
 .
-├── app/                  # 各ページのコンポーネントとスタイル
+├── app/                  # 各ページのコンポーネントとルーティング設定
 │   ├── about/            # 「私たちについて」ページ
 │   ├── contact/          # 「お問い合わせ」ページ
 │   ├── salesbot/         # 「Salesbot」紹介ページ
 │   ├── services/         # 「事業内容」ページ
-│   ├── globals.css       # グローバルスタイル
-│   ├── layout.tsx        # ルートレイアウト
-│   └── page.tsx          # トップページ
-├── components/           # 共通コンポーネント (Header, Footerなど)
-├── public/               # 静的ファイル (画像など)
-├── next.config.ts        # Next.jsの設定ファイル
-├── package.json          # プロジェクトの依存関係とスクリプト
+│   ├── globals.css       # グローバルに適用されるスタイル
+│   ├── layout.tsx        # サイト全体の共通レイアウト
+│   └── page.tsx          # トップページのメインコンポーネント
+├── components/           # 複数のページで再利用する共通コンポーネント
+│   ├── Header.tsx        # ヘッダー
+│   └── Footer.tsx        # フッター
+├── public/               # 画像やフォントなどの静的ファイル
+├── next.config.ts        # Next.jsの挙動をカスタマイズする設定ファイル
+├── package.json          # プロジェクトの情報と依存ライブラリのリスト
 └── README.md             # このファイル
-デプロイ (Deploy on Vercel)
-このアプリケーションは、Next.js の制作者である Vercel が提供する Vercel Platform を利用して、簡単にデプロイできます。
+🌐 デプロイ (Deployment)
+このアプリケーションは、Next.jsの開発元であるVercelが提供するVercel Platformを利用して、非常に簡単にデプロイすることができます。
 
-詳細は、Next.js のデプロイに関するドキュメント をご確認ください。
+GitHubリポジトリを連携させるだけで、自動的にビルドとデプロイが行われます。
+
+より詳細な手順については、Next.jsのデプロイに関する公式ドキュメントをご確認ください。
+
+🔧 コードの改善提案
