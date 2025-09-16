@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+README.md
+Inspire Up 公式ウェブサイト
+このリポジトリは、Inspire Upの公式ウェブサイトのソースコードです。Next.js (App Router) を使用して構築されています。
 
-## Getting Started
+はじめに (Getting Started)
+このプロジェクトをローカル環境でセットアップし、実行する手順は以下の通りです。
 
-First, run the development server:
+1. 必要なもの
 
-```bash
+Node.js (v18.18.0 以上)
+
+npm, yarn, pnpm, または bun
+
+2. リポジトリのクローン
+
+Bash
+
+git clone https://github.com/hyu1211/iu_homepage_next.git
+cd iu_homepage_next
+3. 依存関係のインストール
+
+お使いのパッケージマネージャーに合わせて、以下のいずれかのコマンドを実行してください。
+
+Bash
+
+npm install
+# または
+yarn install
+# または
+pnpm install
+4. 開発サーバーの起動
+
+以下のコマンドを実行すると、開発サーバーが起動します。
+
+Bash
+
 npm run dev
-# or
+# または
 yarn dev
-# or
+# または
 pnpm dev
-# or
-bun dev
-```
+ブラウザで http://localhost:3000 を開くと、ウェブサイトが表示されます。 app ディレクトリ内のファイルを編集すると、ページは自動的に更新されます。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+技術スタック (Technology Stack)
+フレームワーク: Next.js 15
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+UIライブラリ: React 19
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+言語: TypeScript
 
-## Learn More
+スタイリング: CSS Modules, Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+アイコン: React Icons
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ディレクトリ構成 (Directory Structure)
+.
+├── app/                  # 各ページのコンポーネントとスタイル
+│   ├── about/            # 「私たちについて」ページ
+│   ├── contact/          # 「お問い合わせ」ページ
+│   ├── salesbot/         # 「Salesbot」紹介ページ
+│   ├── services/         # 「事業内容」ページ
+│   ├── globals.css       # グローバルスタイル
+│   ├── layout.tsx        # ルートレイアウト
+│   └── page.tsx          # トップページ
+├── components/           # 共通コンポーネント (Header, Footerなど)
+├── public/               # 静的ファイル (画像など)
+├── next.config.ts        # Next.jsの設定ファイル
+├── package.json          # プロジェクトの依存関係とスクリプト
+└── README.md             # このファイル
+デプロイ (Deploy on Vercel)
+このアプリケーションは、Next.js の制作者である Vercel が提供する Vercel Platform を利用して、簡単にデプロイできます。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+詳細は、Next.js のデプロイに関するドキュメント をご確認ください。
