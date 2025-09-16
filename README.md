@@ -21,7 +21,7 @@
 git clone [https://github.com/hyu1211/iu_homepage_next.git](https://github.com/hyu1211/iu_homepage_next.git)
 cd iu_homepage_next
 
-3. 依存関係のインストール
+### 3. 依存関係のインストール
 次に、プロジェクトに必要なライブラリをインストールします。お使いのパッケージマネージャーに合わせて、以下のいずれかのコマンドを実行してください。
 
 Bash
@@ -31,7 +31,7 @@ npm install
 yarn install
 # または
 pnpm install
-4. 開発サーバーの起動
+### 4. 開発サーバーの起動
 インストールが完了したら、開発サーバーを起動します。
 
 Bash
@@ -43,7 +43,7 @@ yarn dev
 pnpm dev
 ブラウザで http://localhost:3000 を開くと、ウェブサイトが表示されます。 app ディレクトリ内のファイルを編集すると、ページはリアルタイムで自動的に更新されます。
 
-✨ 技術スタック (Technology Stack)
+## ✨ 技術スタック (Technology Stack)
 このウェブサイトは、以下のモダンな技術を使用して構築されています。
 
 フレームワーク: Next.js 15 (App Router)
@@ -56,7 +56,7 @@ UIライブラリ: React 19
 
 アイコン: React Icons
 
-📁 ディレクトリ構成 (Directory Structure)
+## 📁 ディレクトリ構成 (Directory Structure)
 プロジェクトの主要なディレクトリとファイルは以下の通りです。
 
 .
@@ -75,7 +75,7 @@ UIライブラリ: React 19
 ├── next.config.ts        # Next.jsの挙動をカスタマイズする設定ファイル
 ├── package.json          # プロジェクトの情報と依存ライブラリのリスト
 └── README.md             # このファイル
-🌐 デプロイ (Deployment)
+##🌐 デプロイ (Deployment)
 このアプリケーションは、Next.jsの開発元であるVercelが提供するVercel Platformを利用して、非常に簡単にデプロイすることができます。
 
 GitHubリポジトリを連携させるだけで、自動的にビルドとデプロイが行われます。
