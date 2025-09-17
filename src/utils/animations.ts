@@ -78,25 +78,27 @@ export const getScrollDirection = (() => {
   };
 })();
 
-// デバウンス関数
-export const debounce = <T extends (...args: any[]) => void>(
-  func: T,
+// src/utils/animations.ts
+
+// debounce関数
+export const debounce = <A extends unknown[], R>(
+  func: (...args: A) => R,
   wait: number
-): ((...args: Parameters<T>) => void) => {
+): ((...args: A) => void) => {
   let timeout: NodeJS.Timeout;
-  return (...args: Parameters<T>) => {
+  return (...args: A) => {
     clearTimeout(timeout);
     timeout = setTimeout(() => func(...args), wait);
   };
 };
 
-// スロットル関数
-export const throttle = <T extends (...args: any[]) => void>(
-  func: T,
+// throttle関数
+export const throttle = <A extends unknown[]>(
+  func: (...args: A) => void,
   limit: number
-): ((...args: Parameters<T>) => void) => {
+): ((...args: A) => void) => {
   let inThrottle: boolean;
-  return (...args: Parameters<T>) => {
+  return (...args: A) => {
     if (!inThrottle) {
       func(...args);
       inThrottle = true;
