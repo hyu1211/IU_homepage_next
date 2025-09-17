@@ -29,7 +29,7 @@ export default function SalesbotPage() {
         </div>
 
         <div className={styles.ctaContainer}>
-          <Link href="/contact" className={styles.ctaButton}>
+          <Link href="/salesbot-consultation" className={styles.ctaButton}>
             導入について相談する
           </Link>
         </div>

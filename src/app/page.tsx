@@ -17,14 +17,6 @@ export default function HomePage() {
           <p className={styles.heroSubtitle}>
             企業のDX推進、AI導入、業務自動化・効率化を支援し<br />ビジネスの持続的な成長をサポートします。
           </p>
-          <div className={styles.ctaButtons}>
-            <Link href="/contact" className={styles.ctaButton}>
-              無料相談を申し込む
-            </Link>
-            <Link href="/#works" className={styles.ctaButtonSecondary}>
-              実績を見る
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -123,10 +115,6 @@ export default function HomePage() {
               <div className={styles.worksIcon}><FaBullhorn/></div>
               <h4>フォーム営業自動化ツール「Salesbot」</h4>
               <p>ボタン一つで1日1万件以上のフォーム営業を自動化。150万件以上の営業リストも使い放題で、営業効率を飛躍的に向上させます。</p>
-              <div className={styles.metrics}>
-                <span>📈 効率化: 95%向上</span>
-                <span>⚡ 処理速度: 1日1万件</span>
-              </div>
               <Link href="/salesbot" className={styles.worksLink}>詳しく見る</Link>
             </div>
             <div className={styles.worksCard}>
