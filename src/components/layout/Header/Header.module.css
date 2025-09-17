@@ -6,11 +6,12 @@
   height: var(--header-height);
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.4s var(--ease-elegant);
 }
 
 .headerVisible {
@@ -27,6 +28,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 6vw, 3rem);
 }
 
 .logo {
@@ -50,39 +54,49 @@
 }
 
 .navList a {
-  font-size: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   font-weight: 500;
-  color: var(--primary-color);
-  padding-bottom: 5px;
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
   position: relative;
-  transition: color 0.3s;
+  transition: all 0.4s var(--ease-elegant);
   white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
 .navList a span {
   font-size: 0.8em;
-  color: #999;
+  color: var(--text-muted);
   font-weight: 400;
-  margin-left: 5px;
+  margin-left: 0.5rem;
+  opacity: 0.7;
+  font-style: italic;
 }
 
 .navList a::after {
   content: '';
   position: absolute;
-  width: 0;
-  height: 2px;
   bottom: 0;
-  left: 0;
-  background-color: var(--secondary-color);
-  transition: width 0.3s ease-in-out;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--accent-color);
+  transition: all 0.4s var(--ease-elegant);
+  transform: translateX(-50%);
 }
 
 .navList a:hover {
-  color: #000;
+  color: var(--accent-color);
 }
 
 .navList a:hover::after {
-  width: 100%;
+  width: 80%;
+}
+
+.navList a:hover span {
+  color: var(--accent-color);
+  opacity: 1;
 }
 
 /* --- モバイル用のハンバーガーメニュー --- */
@@ -94,39 +108,70 @@
   color: var(--primary-color);
 }
 
-/* 画面幅が992px以下の場合に適用されるスタイル */
+/* タブレット・モバイル対応 */
+@media (max-width: 1024px) {
+  .nav {
+    padding: 0 2rem;
+  }
+  
+  .navList {
+    gap: 15px;
+  }
+  
+  .navList a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
 @media (max-width: 992px) {
   .logo {
-    margin-left: 0; /* ロゴの左マージンをリセット */
+    margin-left: 0;
   }
   .logoText {
-    height: 30px; /* ロゴテキストを少し小さく */
+    height: 30px;
   }
   .menuButton {
-    display: block; /* モバイルで表示 */
+    display: block;
   }
 
   .navList {
     display: flex;
-    flex-direction: column; /* 縦並びに変更 */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
-    right: -100%; /* 初期状態では画面外に隠す */
+    right: -100%;
     width: 100%;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     transition: right 0.4s ease-in-out;
-    gap: 40px; /* 項目間のスペースを広げる */
+    gap: 40px;
   }
 
   .menuOpen {
-    right: 0; /* メニューを開いたときに右からスライドイン */
+    right: 0;
   }
 
   .navList a {
-    font-size: 1.5rem; /* 文字を大きくしてタップしやすく */
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 0 1rem;
+  }
+  
+  .logoText {
+    height: 25px;
   }
 }

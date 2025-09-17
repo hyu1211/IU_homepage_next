@@ -1,0 +1,456 @@
+/* ヒーローセクション */
+.hero {
+  background: var(--background-primary);
+  padding: clamp(8rem, 15vw, 12rem) 0 clamp(5rem, 10vw, 8rem);
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-none);
+  border: 2px solid var(--text-primary);
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--text-primary);
+  color: var(--background-primary);
+  transition: all 0.4s var(--ease-elegant);
+}
+
+.ctaButton:hover {
+  background: transparent;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-subtle);
+}
+
+/* なぜInspire Upなのかセクション */
+.whyUs {
+  background: var(--background-tertiary);
+}
+
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.reasonCard {
+  background: var(--background-primary);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.4s var(--ease-elegant);
+  border: 1px solid var(--border-light);
+}
+
+.reasonCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+  border-color: var(--accent-color);
+}
+
+.reasonIcon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.reasonCard h3 {
+  font-family: var(--font-serif-jp);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.reasonCard p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* 募集職種セクション */
+.positions {
+  background: var(--background-primary);
+}
+
+.positionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.positionCard {
+  background: var(--background-secondary);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s var(--ease-elegant);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.positionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-light) 100%);
+}
+
+.positionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-elegant);
+  border-color: var(--accent-color);
+}
+
+.positionIcon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.positionCard h3 {
+  font-family: var(--font-serif-jp);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.positionDetails {
+  text-align: left;
+}
+
+.positionDetails p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 1.5rem 0 0.5rem;
+}
+
+.positionDetails ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.positionDetails li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: 0.3rem 0;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.positionDetails li::before {
+  content: '•';
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+}
+
+/* 働き方・環境セクション */
+.workEnvironment {
+  background: var(--background-tertiary);
+}
+
+.environmentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.environmentCard {
+  background: var(--background-primary);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.4s var(--ease-elegant);
+}
+
+.environmentCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.environmentIcon {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.environmentCard h3 {
+  font-family: var(--font-serif-jp);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.environmentCard p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 求める人物像セクション */
+.idealCandidate {
+  background: var(--background-primary);
+}
+
+.candidateContent {
+  margin-top: 3rem;
+}
+
+.candidateList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.candidateItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--accent-color);
+  transition: all 0.4s var(--ease-elegant);
+}
+
+.candidateItem:hover {
+  background: var(--background-tertiary);
+  transform: translateX(8px);
+}
+
+.candidateIcon {
+  font-size: 2rem;
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.candidateItem h3 {
+  font-family: var(--font-serif-jp);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.candidateItem p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 応募方法セクション */
+.application {
+  background: var(--background-tertiary);
+}
+
+.applicationContent {
+  margin-top: 3rem;
+}
+
+.applicationSteps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.stepItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--background-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.4s var(--ease-elegant);
+}
+
+.stepItem:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: white;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.stepContent h3 {
+  font-family: var(--font-serif-jp);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.stepContent p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.applicationCta {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--background-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+.applicationCta h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.applicationCta p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.applicationButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 3rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--accent-color);
+  color: var(--background-primary);
+  transition: all 0.4s var(--ease-elegant);
+  box-shadow: var(--shadow-subtle);
+}
+
+.applicationButton:hover {
+  background: transparent;
+  color: var(--accent-color);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .hero {
+    padding: clamp(6rem, 12vw, 8rem) 0 clamp(3rem, 8vw, 5rem);
+  }
+  
+  .reasonsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .positionsGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .environmentGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .candidateList {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .applicationSteps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .reasonCard,
+  .positionCard,
+  .environmentCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .candidateItem,
+  .stepItem {
+    padding: 1.5rem;
+  }
+  
+  .applicationCta {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .candidateItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .stepItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}

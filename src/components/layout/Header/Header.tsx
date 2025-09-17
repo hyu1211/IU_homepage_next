@@ -64,10 +64,10 @@ export default function Header() {
         {/* ナビゲーションリスト */}
         <ul className={`${styles.navList} ${isMenuOpen ? styles.menuOpen : ''}`}>
           <li><Link href="/" onClick={toggleMenu}>ホーム <span>/ Home</span></Link></li>
-          <li><Link href="/#about" onClick={toggleMenu}>会社概要 <span>/ About</span></Link></li>
-          <li><Link href="/#solution" onClick={toggleMenu}>提供サービス <span>/ Services</span></Link></li>
-          <li><Link href="/#strength" onClick={toggleMenu}>特長・強み <span>/ Features</span></Link></li>
-          <li><Link href="/#works" onClick={toggleMenu}>実績紹介 <span>/ Works</span></Link></li>
+          <li><Link href="/company" onClick={toggleMenu}>会社概要 <span>/ Company</span></Link></li>
+          <li><Link href="/team" onClick={toggleMenu}>チーム <span>/ Team</span></Link></li>
+          <li><Link href="/services" onClick={toggleMenu}>サービス <span>/ Services</span></Link></li>
+          <li><Link href="/careers" onClick={toggleMenu}>採用情報 <span>/ Careers</span></Link></li>
           <li><Link href="/contact" onClick={toggleMenu}>お問い合わせ <span>/ Contact</span></Link></li>
         </ul>
       </nav>

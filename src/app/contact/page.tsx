@@ -6,11 +6,17 @@ import styles from './Contact.module.css';
 export default function ContactPage() {
   return (
     <div className="section container">
-      <h1 className="section-title">Contact Us</h1>
+      <h1 className="section-title">お問い合わせ</h1>
       <div className={styles.contactWrapper}>
         <p className={styles.intro}>
-          その他、相談ベースで柔軟に対応可能です。お客様のあらゆる課題に対し、最適な解決策をご提案します。お気軽にご相談ください！
+          DX推進やAI導入に関するご相談から、具体的なシステム開発まで、お客様のあらゆる課題に対して最適なソリューションをご提案いたします。<br />
+          <strong>初回相談は無料</strong>ですので、お気軽にお問い合わせください。
         </p>
+        <div className={styles.features}>
+          <div className={styles.feature}>✓ 初回相談無料</div>
+          <div className={styles.feature}>✓ 24時間以内に返信</div>
+          <div className={styles.feature}>✓ オンライン・対面両方対応</div>
+        </div>
         <div className={styles.contactInfo}>
           {/* Email */}
           <div className={styles.infoItem}>

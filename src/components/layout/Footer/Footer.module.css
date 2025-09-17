@@ -1,55 +1,85 @@
 .footer {
-    background-color: var(--primary-color);
-    color: #a8b2d1;
-    padding: 50px 0 20px;
+  background: var(--background-dark);
+  color: rgba(255,255,255,0.8);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding: 4rem clamp(1.5rem, 6vw, 3rem) 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.address a { color: #fff; opacity: 0.9; }
+.address a:hover { opacity: 1; }
+
+.linkColumns { display: contents; }
+.column { display: flex; flex-direction: column; gap: 0.4rem; }
+.columnTitle {
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.column ul { list-style: none; padding: 0; margin: 0; }
+.column a { color: rgba(255,255,255,0.8); transition: color .2s ease; }
+.column a:hover { color: #fff; }
+
+.bottomBar { 
+  padding: 1rem clamp(1.5rem, 6vw, 3rem); 
+}
+.bottomInner { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  color: rgba(255,255,255,0.6);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.langs { display: flex; gap: .5rem; align-items: center; }
+.langs button { background: transparent; color: rgba(255,255,255,0.8); border: none; cursor: pointer; font-weight: 600; }
+.langs button:hover { color: #fff; }
+
+@media (max-width: 960px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 3rem 2rem 2rem;
   }
   
-  .footerContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-bottom: 40px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #303C55;
-    flex-wrap: wrap;
-    gap: 30px;
+  .logo {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner { 
+    grid-template-columns: 1fr; 
+    padding: 2.5rem 1.5rem 2rem;
+    gap: 1.5rem;
   }
   
-  .footerLogo {
-    font-family: 'Poppins', sans-serif;
-    color: var(--background-white);
-    font-size: 1.8rem;
-    margin: 0 0 15px 0;
+  .logo {
+    font-size: 1.4rem;
   }
   
-  .info p {
-    margin: 5px 0;
+  .bottomInner { 
+    flex-direction: column; 
+    gap: .75rem; 
   }
   
-  .info a {
-    transition: color 0.3s;
+  .bottomBar {
+    padding: 1rem 1.5rem;
   }
-  
-  .info a:hover {
-    color: var(--secondary-color);
-  }
-  
-  .links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: right;
-  }
-  
-  .links a {
-    transition: color 0.3s;
-  }
-  
-  .links a:hover {
-    color: var(--secondary-color);
-  }
-  
-  .copyright {
-    text-align: center;
-    font-size: 0.9rem;
-  }
+}

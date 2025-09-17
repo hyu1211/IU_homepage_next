@@ -26,9 +26,9 @@ export const SITE_CONFIG = {
   
   // 連絡先情報
   contact: {
-    email: 'info@inspire-up.com',
-    phone: '03-1234-5678',
-    address: '東京都渋谷区...' // 実際の住所に変更してください
+    email: 'inspireup.w.official@gmail.com',
+    phone: '080-2342-4513',
+    address: '東京都内'
   },
   
   // 営業時間

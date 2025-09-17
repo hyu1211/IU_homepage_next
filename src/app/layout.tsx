@@ -5,11 +5,25 @@ import "@/styles/variables.css";
 import "@/styles/animations.css";
 
 export const metadata: Metadata = {
-  title: "Inspire Up | DX推進とAI導入で企業の未来を加速する",
-  description: "企業のDX推進、AI導入、業務自動化・効率化を支援し、ビジネスの持続的な成長をサポートします。",
-//   icons: {
-//     icon: "https://res.cloudinary.com/dagugihav/image/upload/v1757590201/Adobe_Express_-_file_3_yaomdl.png",
-//   },
+  title: "Inspire Up | DX推進・AI導入で業務効率化を実現 | 早稲田・東大学生チーム",
+  description: "早稲田大学・東京大学の現役学生による高品質なDX推進・AI導入サービス。業務自動化で効率95%向上。初回相談無料。42Tokyo・Mensa会員在籍の実力派チーム。",
+  keywords: "DX推進,AI導入,業務自動化,システム開発,早稲田大学,東京大学,42Tokyo,Mensa,コストパフォーマンス",
+  authors: [{ name: "Inspire Up" }],
+  creator: "Inspire Up",
+  publisher: "Inspire Up",
+  robots: "index,follow",
+  openGraph: {
+    title: "Inspire Up | DX推進・AI導入で業務効率化を実現",
+    description: "早稲田大学・東京大学の現役学生による高品質なDX推進・AI導入サービス。業務自動化で効率95%向上。",
+    type: "website",
+    locale: "ja_JP",
+    siteName: "Inspire Up"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Inspire Up | DX推進・AI導入で業務効率化を実現",
+    description: "早稲田大学・東京大学の現役学生による高品質なDX推進・AI導入サービス。"
+  }
 };
 
 export default function RootLayout({

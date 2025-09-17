@@ -1,9 +1,9 @@
 :root {
-  /* Colors */
-  --color-primary: #667eea;
-  --color-primary-dark: #764ba2;
-  --color-secondary: #f093fb;
-  --color-accent: #4facfe;
+  /* Modern Color Palette */
+  --color-primary: #6366f1;
+  --color-primary-dark: #4f46e5;
+  --color-secondary: #8b5cf6;
+  --color-accent: #06b6d4;
   
   --color-text-primary: #2d3748;
   --color-text-secondary: #4a5568;
