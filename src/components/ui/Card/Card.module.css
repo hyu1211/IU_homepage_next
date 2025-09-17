@@ -1,0 +1,36 @@
+.card {
+  border-radius: 12px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* Variants */
+.default {
+  border: 1px solid #e9ecef;
+}
+
+.elevated {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.elevated:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.outlined {
+  border: 2px solid #dee2e6;
+}
+
+/* Padding */
+.small {
+  padding: 16px;
+}
+
+.medium {
+  padding: 24px;
+}
+
+.large {
+  padding: 32px;
+}
