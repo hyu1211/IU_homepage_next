@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card } from '@/components/ui';
-import { AnimatedSection } from '@/components/common';
+import { AnimatedSection } from '@/components';
 import styles from './Hero.module.css';
 
 export default function Hero() {
