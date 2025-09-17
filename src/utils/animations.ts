@@ -16,7 +16,7 @@ export const easeIn = (t: number): number => {
 export const smoothScrollTo = (target: string | number, duration: number = 800): void => {
   const startPosition = window.pageYOffset;
   const targetPosition = typeof target === 'string' 
-    ? document.querySelector(target)?.offsetTop || 0
+    ? (document.querySelector(target) as HTMLElement)?.offsetTop || 0
     : target;
   const distance = targetPosition - startPosition;
   let startTime: number | null = null;
