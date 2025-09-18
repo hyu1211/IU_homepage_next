@@ -39,19 +39,11 @@ export default function Header() {
       <nav className={`${styles.nav} container`}>
         <Link href="/" className={styles.logo}>
           <Image
-            src="https://res.cloudinary.com/dagugihav/image/upload/v1757590201/Adobe_Express_-_file_3_yaomdl.png"
-            alt="Inspire Up Icon"
-            width={40}
-            height={40}
-            priority
-          />
-          <Image
-            src="https://res.cloudinary.com/dagugihav/image/upload/v1757591043/1_h473ft.png"
-            alt="Inspire Up Text"
+            src="https://res.cloudinary.com/dagugihav/image/upload/v1758170682/Gemini_Generated_Image_ho7khjho7khjho7k_2_cui6kj.png"
+            alt="Inspire Up Logo"
             className={styles.logoText}
-            width={140}
-            height={35}
-            style={{ marginLeft: '8px' }}
+            width={280}
+            height={65}
             priority
           />
         </Link>

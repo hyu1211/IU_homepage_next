@@ -40,7 +40,7 @@
   flex-shrink: 0;
 }
 .logoText {
-  height: clamp(25px, 4vw, 35px);
+  height: clamp(35px, 6vw, 65px);
   width: auto;
 }
 
